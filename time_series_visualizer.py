@@ -66,13 +66,13 @@ def draw_box_plot():
     month_palette = sns.color_palette('tab20', len(months))
     
     fig, axs = plt.subplots(1, 2, figsize=(16,5))
-    sns.boxplot(x=df_box['year'], y=df_box['value'], ax=axs[0], palette = year_palette)
+    sns.boxplot(x=df_box['year'], y=df_box['value'], ax=ax1, hue=df_box['year'],palette = year_palette, legend=False)
     axs[0].set_title("Year-wise Box Plot (Trend)")
     axs[0].set_xlabel('Year')
     axs[0].set_ylabel('Page Views')
 
 
-    sns.boxplot(x=df_box['month'], y=df_box['value'], ax=axs[1], palette=month_palette)
+    sns.boxplot(x=df_box['month'], y=df_box['value'], ax=ax2, hue=df_box['month'], palette=month_palette, legend=False)
     axs[1].set_title("Month-wise Box Plot (Seasonality)")
     axs[1].set_xlabel('Month')
     axs[1].set_ylabel('Page Views')
